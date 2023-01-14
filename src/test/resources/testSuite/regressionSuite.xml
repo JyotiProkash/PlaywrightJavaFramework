@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="RegressionTestSuite" thread-count="2" parallel="tests" verbose="4">
+
+    <listeners>
+        <listener class-name="org.testautomation.framework.listeners.ExtentReportListener"/>
+    </listeners>
+
+    <test name="HomePage Test" >
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="org.testautomation.framework.tests.HomePageTest">
+                <methods>
+                    <include name="homePageUrlTest"/>
+                    <include name="homePageTitleTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+<!--    <test name="LoginPage Test" >-->
+<!--        <parameter name="browser" value="firefox"/>-->
+<!--        <classes>-->
+<!--            <class name="org.testautomation.framework.tests.LoginPageTest">-->
+<!--                <methods>-->
+<!--                    <include name="navigateToLoginPageTest"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+</suite>

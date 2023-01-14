@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.testautomation.framework</groupId>
+    <artifactId>PlaywrightJavaFramework</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>18</maven.compiler.source>
+        <maven.compiler.target>18</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <surefire.plugin.version>3.0.0-M7</surefire.plugin.version>
+        <compiler.plugin.version>3.9.0</compiler.plugin.version>
+        <codehaus.mojo.maven.plugin.version>3.1.0</codehaus.mojo.maven.plugin.version>
+        <extents.report.aventstack.version>5.0.9</extents.report.aventstack.version>
+        <commons.io.version>2.11.0</commons.io.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>com.microsoft.playwright</groupId>
+            <artifactId>playwright</artifactId>
+            <version>1.28.1</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.testng/testng -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.7.0</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>${extents.report.aventstack.version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons.io.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.24</version>
+            <scope>provided</scope>
+        </dependency>
+
+    </dependencies>
+    <build>
+        <plugins>
+            <!-- Following plugin executes the testng tests -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${surefire.plugin.version}</version>
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--&lt;!&ndash;                        <phase>integration-test</phase>&ndash;&gt;-->
+<!--                        <goals>-->
+<!--                            <goal>test</goal>-->
+<!--                        </goals>-->
+                        <configuration>
+                            <!-- Suite testng xml file to consider for test execution -->
+                            <suiteXmlFiles>
+<!--                                <suiteXmlFile>${project.basedir}/src/test/resources/testSuite/regressionSuite.xml</suiteXmlFile>-->
+                                <suiteXmlFile>./src/test/resources/testSuite/regressionSuite.xml</suiteXmlFile>
+                            </suiteXmlFiles>
+                        </configuration>
+<!--                    </execution>-->
+<!--                </executions>-->
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${compiler.plugin.version}</version>
+<!--                                <configuration>-->
+<!--                                    <source>${maven.compiler.source}</source>-->
+<!--                                    <target>${maven.compiler.target}</target>-->
+<!--                                </configuration>-->
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>${codehaus.mojo.maven.plugin.version}</version>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
