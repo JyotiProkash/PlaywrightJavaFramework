@@ -3,7 +3,8 @@ pipeline
     agent any
     
     tools{
-    	maven 'maven'
+    	maven 'Maven 3.8.6'
+        jdk 'java 18 2022-03-22'
         }
 
     stages 
