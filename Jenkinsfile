@@ -36,7 +36,7 @@ pipeline
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     git 'https://github.com/JyotiProkash/PlaywrightJavaFramework.git'
-                    sh "mvn clean test -Dsurefire.suiteXmlFiles=D:/Automation/PlaywrightJavaFramework/src/test/resources/testSuite/regressionSuite.xml"
+                    sh "clean test -Dsurefire.suiteXmlFiles=D:/Automation/PlaywrightJavaFramework/src/test/resources/testSuite/regressionSuite.xml"
                     
                 }
             }
