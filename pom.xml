@@ -69,8 +69,8 @@
                         <configuration>
                             <!-- Suite testng xml file to consider for test execution -->
                             <suiteXmlFiles>
-<!--                                <suiteXmlFile>${project.basedir}/src/test/resources/testSuite/regressionSuite.xml</suiteXmlFile>-->
-                                <suiteXmlFile>./src/test/resources/testSuite/regressionSuite.xml</suiteXmlFile>
+                                <suiteXmlFile>${project.basedir}/src/test/resources/testSuite/regressionSuite.xml</suiteXmlFile>
+<!--                                <suiteXmlFile>./src/test/resources/testSuite/regressionSuite.xml</suiteXmlFile>-->
                             </suiteXmlFiles>
                         </configuration>
 <!--                    </execution>-->
