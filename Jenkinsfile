@@ -1,9 +1,11 @@
 pipeline 
 {
     agent any
+    environment{
+    PATH="D:\Software\apache-maven-3.8.6-bin\apache-maven-3.8.6\bin:$PATH"
+    }
     
     tools{
-    	maven 'MAVEN_HOME'
         jdk 'JAVA_HOME'
         }
 
@@ -36,7 +38,7 @@ pipeline
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     git 'https://github.com/JyotiProkash/PlaywrightJavaFramework.git'
-                    sh 'cd MAVEN_HOME/bin/mvn clean package'
+                    sh 'mvn clean install'
                     
                 }
             }
