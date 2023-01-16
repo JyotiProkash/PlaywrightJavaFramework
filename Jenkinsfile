@@ -3,7 +3,7 @@ pipeline
     agent any
     
     tools{
-    	maven 'MAVEN_HOME'
+    	maven 'M2_HOME'
         jdk 'JAVA_HOME'
         }
 
@@ -36,7 +36,7 @@ pipeline
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     git 'https://github.com/JyotiProkash/PlaywrightJavaFramework.git'
-                    sh 'mvn clean package'
+                    bat 'mvn clean package'
                     
                 }
             }
