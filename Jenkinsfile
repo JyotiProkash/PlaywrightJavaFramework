@@ -36,7 +36,7 @@ pipeline
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     git 'https://github.com/JyotiProkash/PlaywrightJavaFramework.git'
-                    sh 'mvn clean test'
+                    sh 'cd MAVEN_HOME/bin/mvn clean package'
                     
                 }
             }
