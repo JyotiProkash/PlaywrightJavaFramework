@@ -49,19 +49,19 @@ public class BrowserFactory {
         tLocalPlaywright.set(Playwright.create());
         if (browserName.equalsIgnoreCase("chromium")) {
             //browser= playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
-            tLocalBrowser.set(getPlaywright().chromium().launch(new BrowserType.LaunchOptions().setHeadless(false)));
+            tLocalBrowser.set(getPlaywright().chromium().launch(new BrowserType.LaunchOptions().setHeadless(Boolean.parseBoolean(initProp().getProperty("headless")))));
         } else if (browserName.equalsIgnoreCase("chrome")) {
             //browser= playwright.chromium().launch(new BrowserType.LaunchOptions().setChannel("chrome").setHeadless(false));
-            tLocalBrowser.set(getPlaywright().chromium().launch(new BrowserType.LaunchOptions().setChannel("chrome").setHeadless(false)));
+            tLocalBrowser.set(getPlaywright().chromium().launch(new BrowserType.LaunchOptions().setChannel("chrome").setHeadless(Boolean.parseBoolean(initProp().getProperty("headless")))));
         } else if (browserName.equalsIgnoreCase("firefox")) {
             //browser= playwright.firefox().launch(new BrowserType.LaunchOptions().setChannel("firefox").setHeadless(false));
-            tLocalBrowser.set(getPlaywright().firefox().launch(new BrowserType.LaunchOptions().setChannel("firefox").setHeadless(false)));
+            tLocalBrowser.set(getPlaywright().firefox().launch(new BrowserType.LaunchOptions().setChannel("firefox").setHeadless(Boolean.parseBoolean(initProp().getProperty("headless")))));
         } else if (browserName.equalsIgnoreCase("edge")) {
             //browser= playwright.chromium().launch(new BrowserType.LaunchOptions().setChannel("msedge").setHeadless(false));
-            tLocalBrowser.set(getPlaywright().chromium().launch(new BrowserType.LaunchOptions().setChannel("msedge").setHeadless(false)));
+            tLocalBrowser.set(getPlaywright().chromium().launch(new BrowserType.LaunchOptions().setChannel("msedge").setHeadless(Boolean.parseBoolean(initProp().getProperty("headless")))));
         } else if (browserName.equalsIgnoreCase("safari")) {
             //browser= playwright.webkit().launch(new BrowserType.LaunchOptions().setHeadless(false));
-            tLocalBrowser.set(getPlaywright().webkit().launch(new BrowserType.LaunchOptions().setHeadless(false)));
+            tLocalBrowser.set(getPlaywright().webkit().launch(new BrowserType.LaunchOptions().setHeadless(Boolean.parseBoolean(initProp().getProperty("headless")))));
         } else {
             System.out.println("Please enter browser name");
         }
