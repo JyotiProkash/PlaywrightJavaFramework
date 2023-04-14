@@ -76,4 +76,14 @@ public class RadioButtonTest {
         page.isVisible(impressiveRadioButtonSelectedStatus);
     }*/
 
+    //Radio button test selecting visible element OR visibility filter
+    @Test(priority = 6)
+    public void RadioButtonTest() {
+        page.locator("text=Yes >> visible=true").check();
+        page.isVisible(yesRadioButtonSelectedStatus);
+
+        page.locator("text=Impressive >> visible=true").check();
+        page.isVisible(impressiveRadioButtonSelectedStatus);
+    }
+
 }
